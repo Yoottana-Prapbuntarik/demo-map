@@ -703,7 +703,13 @@ function App() {
                       <>
                         {
                           item.imgPath ?
-                            <Lot key={index} lotName={item.status === "" ? "" : `${item.name ?? ""}`} imagePath={item.imgPath} selected={selected} onSelected={setSelected} /> :
+                            <Lot key={index} lotName={item.status === "" ? "" : `${item.name ?? ""}`} imagePath={item.imgPath} selected={selected}
+                              onSelected={
+                                item.imgPath === "/book.svg" ||  item.imgPath ===  "/unavailable.svg"?
+                                  (e) => console.log('not selected ', e) :
+                                  setSelected
+                              }
+                            /> :
                             <div style={{ marginTop: '1rem' }}></div>
                         }
                       </>
