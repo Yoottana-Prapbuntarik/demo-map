@@ -1,20 +1,26 @@
 const Lot = ({ lotName, imagePath, selected, onSelected }) => {
     return (
-        <div className="d-flex">
-
+        <div style={{ marginTop: '1rem' }}>
             <div className="lot"
-            onClick={()=> onSelected(lotName)} 
-            style={{
-                backgroundImage: `url(${imagePath})`
-            }}>
+                onClick={() => onSelected(lotName)}
+                style={{
+                    backgroundImage: `url(${imagePath})`
+                }}>
                 <span className="text-lot">
                     {lotName}
                 </span>
             </div>
-            {
-                lotName === selected && lotName != "" &&
-                <img src={'selected.svg'} />
-            }
+            <div style={{ position: 'relative' }}>
+                {
+                    lotName === selected && lotName != "" &&
+                    <img src={'selected.svg'} style={{
+                        position: 'absolute',
+                        left: '7px',
+                        right: '7px',
+                        top: '7px',
+                    }} />
+                }
+            </div>
         </div>
 
     )
