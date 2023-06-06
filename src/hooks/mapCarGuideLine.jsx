@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const useCarGuideLine = () => {
     const [floorList, setFloor] = useState([])
-    const [floor, selectedFloor] = useState(2)
+    const [floor, selectedFloor] = useState(1)
 
     useEffect(() => {
         if (floor == 1) {
