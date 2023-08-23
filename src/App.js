@@ -26,7 +26,10 @@ function App() {
                     <>
                       {
                         item.imgPath ?
-                          <Lot key={index} lotName={`${item.parking_lot ?? ""}`} imagePath={item.imgPath} selected={selected}
+                          <Lot 
+                          debug
+                          raw={item}
+                          key={index} lotName={`${item.parking_lot ?? ""}`} imagePath={item.imgPath} selected={selected}
                             onSelected={
                               item.imgPath === "/book.svg" || item.imgPath === "/unavailable.svg" ?
                                 (e) => console.log('not selected ', e) :
@@ -72,7 +75,7 @@ function App() {
             </div>
           </div>
         </div>
-          <button onClick={() => {selectedFloor(floor == 1 ? 2 : 1);}} >เปลี่ยนชั้น</button>
+        <button onClick={() => { selectedFloor(floor == 1 ? 2 : 1); }} >เปลี่ยนชั้น</button>
       </header>
     </div>
   );

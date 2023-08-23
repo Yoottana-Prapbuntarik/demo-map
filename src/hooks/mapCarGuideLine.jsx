@@ -22,15 +22,14 @@ export const useCarGuideLine = () => {
                 })
 
                 // map row 1
-                const row1 = ['1-1', '1-2', '1-3', '1-4', '1-5', '1-6', '1-7', '1-8', '1-9', '1-10', '1-11', '1-12']
+                const row1 = ['1-1', '1-2', '1-3', '1-4', '1-5', '1-6', '1-7', '1-8', '1-9', '1-10', '1-11', '1-12', '1-13']
                 const row_1 = convertFromRaw.filter((item) => {
                     if (row1.includes(item.parking_lot)) {
                         return item
                     }
                 })
-                row_1.splice(5, 0, stair)
+                row_1.splice(6, 0, stair)
                 row_1.push(empty)
-                row_1.push(noSlot)
                 row_1.push(stair)
                 row_1.push(liff)
                 row_1.push(liff)
@@ -38,7 +37,7 @@ export const useCarGuideLine = () => {
 
 
                 // map row 2
-                const row2 = ['1-13', '1-14', '1-15', '1-16', '1-17', '1-18', '1-19', '1-20', '1-21', '1-22', '1-23', '1-24', '1-25', '1-26', '1-27', '1-28']
+                const row2 = ['1-14', '1-15', '1-16', '1-17', '1-18', '1-19', '1-20', '1-21', '1-22', '1-23', '1-24', '1-25', '1-26', '1-27', '1-28', '1-29']
                 const row_2 = convertFromRaw.filter((item) => {
                     if (row2.includes(item.parking_lot)) {
                         return item
@@ -48,78 +47,125 @@ export const useCarGuideLine = () => {
                 row_2.splice(14, 0, empty);
                 row_2.splice(18, 0, empty);
 
+                const emptyLot = []
+                emptyLot.splice(0, 0, empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
+                emptyLot.push(empty)
 
-                const row3 = ['1-29', '1-30', '1-31', '1-32', '1-33', '1-34', '1-35', '1-36', '1-37', '1-38', '1-39', '1-40', '1-41', '1-42', '1-43', '1-44']
+                const row3 = ['1-31', '1-32', '1-33', '1-34', '1-35', '1-36', '1-37', '1-38', '1-39', '1-40', '1-41', '1-42', '1-43', '1-44', '1-45']
                 const row_3 = convertFromRaw.filter((item) => {
                     if (row3.includes(item.parking_lot)) {
                         return item
                     }
                 })
+                console.log(row3);
 
                 // map row 3
+                row_3.splice(0, 0, convertFromRaw.find(item => item.parking_lot === '1-30'))
                 row_3.splice(1, 0, empty)
-                row_3.splice(14, 0, empty);
-                row_3.splice(18, 0, empty);
+                row_3.splice(14, 0, empty)
+                // row_3.splice(15, 0, empty);
+                // row_3.splice(16, 0, empty);
 
 
-                // const row4 = ['1-45']
-                // const row_4 = convertFromRaw.filter((item) => {
-                //     if (row4.includes(item.parking_lot)) {
-                //         return item
-                //     }
-                // })
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-                // row_4.push(empty)
-
-
-                const row5 = ['1-46', '1-47', '1-48', '1-49', '1-50', '1-51', '1-52', '1-53', '1-54', '1-55', '1-56', '1-57', '1-58', '1-59', '1-60', '1-61']
+                const row4 = ['1-46']
+                const row_4 = convertFromRaw.filter((item) => {
+                    if (row4.includes(item.parking_lot)) {
+                        return item
+                    }
+                })
+                row_4.splice(0, 0, empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                row_4.push(empty)
+                const row5 = ['1-47', '1-48', '1-49', '1-50', '1-51', '1-52', '1-53', '1-54', '1-55', '1-56', '1-57', '1-58', '1-59', '1-60', '1-61', '1-62', '1-63']
                 const row_5 = convertFromRaw.filter((item) => {
                     if (row5.includes(item.parking_lot)) {
                         return item
                     }
                 })
 
-                row_5.splice(0, 0, convertFromRaw.find(item => item.parking_lot === "1-45"))
                 row_5.splice(1, 0, empty)
                 row_5.splice(14, 0, empty)
 
-                const row6 = ['1-63', '1-64', '1-65', '1-66', '1-67', '1-68', '1-69', '1-70', '1-71', '1-72', '1-73', '1-74', '1-75', '1-76', '1-77', '1-78']
+                const row6 = ['1-65', '1-66', '1-67', '1-68', '1-69', '1-70', '1-71', '1-72', '1-73', '1-74', '1-75', '1-76', '1-77', '1-78', '1-79', '1-80']
                 const row_6 = convertFromRaw.filter((item) => {
                     if (row6.includes(item.parking_lot)) {
                         return item
                     }
                 })
 
-                row_6.splice(0, 0, convertFromRaw.find(item => item.parking_lot === "1-62"))
+                row_6.splice(0, 0, convertFromRaw.find(item => item.parking_lot === "1-64"))
                 row_6.splice(1, 0, empty)
                 row_6.splice(14, 0, empty)
 
 
-                const row7 = ['1-80', '1-81', '1-82', '1-83', '1-84', '1-85']
+                const row7 = ['1-81', '1-82', '1-83', '1-84', '1-85', '1-86']
                 const row_7 = convertFromRaw.filter((item) => {
                     if (row7.includes(item.parking_lot)) {
                         return item
                     }
                 })
-                row_7.splice(0, 0, convertFromRaw.find(item => item.parking_lot === "1-79"))
-                row_7.splice(1, 0, empty)
-                setFloor([...row_1, ...row_2, ...row_3, ...row_5, ...row_6, ...row_7])
+                row_7.splice(0, 0, empty)
+                row_7.splice(0, 0, empty)
+                row_7.splice(0, 0, empty)
+                row_7.splice(4, 0, empty)
+                row_7.splice(6, 0, empty)
+                row_7.splice(8, 0, empty)
+                row_7.splice(10, 0, empty)
+                row_7.splice(12, 0, empty)
+
+                console.log(row_7.findIndex(item=> item.parking_lot == '1-81'));
+                setFloor([
+                    ...row_1,
+                ...emptyLot,
+                ...emptyLot,
+                ...row_2,
+                ...emptyLot,
+                ...emptyLot,
+                ...row_3,
+                ...emptyLot,
+                ...row_4,
+                ...emptyLot,
+                ...row_5,
+                ...emptyLot,
+                ...emptyLot,
+                ...row_6,
+                ...emptyLot,
+                ...emptyLot,
+                ...row_7
+                ])
             })
         }
     }, [floor])
@@ -171,12 +217,12 @@ export const useCarGuideLine = () => {
                         return item
                     }
                 })
-                
+
                 row_3.splice(1, 0, empty)
                 row_3.splice(15, 0, empty);
-                
-                
-                
+
+
+
                 // // map row 4
                 const row4 = ['2-50', '2-51', '2-52', '2-53', '2-54', '2-55', '2-56', '2-57', '2-58', '2-59', '2-60', '2-61', '2-62', '2-63', '2-64', '2-65',]
                 const row_4 = convertFromRaw.filter((item) => {
@@ -208,6 +254,7 @@ export const useCarGuideLine = () => {
                     }
                 })
                 row_6.splice(1, 0, empty)
+                row_6.splice(2, 0, empty)
                 setFloor([...row_1, ...row_2, ...row_3, ...row_4, ...row_5, ...row_6])
             })
         }

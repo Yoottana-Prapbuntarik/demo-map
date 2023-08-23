@@ -1,10 +1,11 @@
-const Lot = ({ lotName, imagePath, selected, onSelected }) => {
+const Lot = ({ lotName, imagePath, selected, onSelected, raw, debug, customStyle }) => {
     return (
-        <div style={{ marginTop: '1rem' }}>
-            <div className="lot"
+        <div>
+            <div className={"lot"}
                 onClick={() => onSelected(lotName)}
                 style={{
-                    backgroundImage: `url(${imagePath})`
+                    backgroundImage: `url(${imagePath})`,
+                    ...customStyle
                 }}>
                 <span className="text-lot">
                     {lotName}
@@ -19,6 +20,21 @@ const Lot = ({ lotName, imagePath, selected, onSelected }) => {
                         right: '7px',
                         top: '7px',
                     }} />
+                }
+                {
+                    debug && 
+                    <small
+                        style={{
+                            position: 'absolute',
+                            left: 0,
+                            top: 0,
+                        }}
+                    >
+                        {raw.parking_i},{raw.parking_j}
+                        <div style={{background: raw.status === 1 ? 'green' :raw.status === 0 ? 'red' : 'gray', fontSize: '15px' }}>
+                            {raw.status}
+                        </div>
+                    </small>
                 }
             </div>
         </div>
