@@ -11,9 +11,10 @@ export const useCarGuideLine = () => {
             const empty = {};
             const stair = { imgPath: '/stair.svg' }
             const liff = { imgPath: '/liff.svg' }
-            axios.get("https://tsmartoffice.verkoffice.com/apiuser/reserve/car-guidances/").then((response) => {
+            axios.get("https://k8s-tsmartoffice.verkoffice.com/parking/reserve/car-guidances?member_type=employee").then((response) => {
                 const { floor_1 } = response.data.data
                 const convertFromRaw = floor_1.map((item) => {
+                    console.log(item);
                     return {
                         ...item,
                         imgPath: item.status == 1 ? "/available.svg" : "/unavailable.svg"
@@ -129,7 +130,7 @@ export const useCarGuideLine = () => {
             const empty = {};
             const stair = { imgPath: '/stair.svg' }
             const liff = { imgPath: '/liff.svg' }
-            axios.get("https://tsmartoffice.verkoffice.com/apiuser/reserve/car-guidances/").then((response) => {
+            axios.get("https://k8s-tsmartoffice.verkoffice.com/parking/reserve/car-guidances?member_type=employee").then((response) => {
                 const { floor_2 } = response.data.data
                 const convertFromRaw = floor_2.map((item) => {
                     return {
