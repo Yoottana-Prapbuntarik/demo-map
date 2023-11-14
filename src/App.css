@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  background-color:  #646262;
+  background-color: #646262;
 }
 
 .App-link {
@@ -62,4 +62,63 @@
   line-height: 12px;
   text-align: center;
   color: #FFFFFF;
+}
+
+.container-car-guideline {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.container-sub-car-guideline {
+  display: flex;
+  position: relative;
+}
+
+.row-sub-car-guideline {
+  display: grid;
+  grid-template-columns: repeat(19, 1fr);
+  grid-gap: 8px;
+}
+
+.mt-1rem {
+  margin-top: 1rem;
+}
+
+.ml-1rem {
+  margin-left: 1rem;
+}
+
+.entrance {
+  position: absolute;
+  bottom: -50px;
+  right: 0px;
+}
+
+.container-status {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.avaliable {
+  display: flex;
+  align-items: center;
+  color: #383E53;
+}
+
+.unnavailable {
+  display: flex;
+  align-items: center;
+  color: #C9CBD0;
+}
+
+.booked {
+  display: flex;
+  align-items: center;
+  color: #EE9C22;
 }

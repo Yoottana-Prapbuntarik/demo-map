@@ -1,6 +1,7 @@
+import "./lot.css"
 const Lot = ({ lotName, imagePath, selected, onSelected, raw, debug, customStyle }) => {
     return (
-        <div>
+        <div >
             <div className={"lot"}
                 onClick={() => onSelected(lotName)}
                 style={{
@@ -11,25 +12,14 @@ const Lot = ({ lotName, imagePath, selected, onSelected, raw, debug, customStyle
                     {lotName}
                 </span>
             </div>
-            <div style={{ position: 'relative' }}>
+            <div className="position-relative">
                 {
                     lotName === selected && lotName != "" &&
-                    <img src={'selected.svg'} style={{
-                        position: 'absolute',
-                        left: '7px',
-                        right: '7px',
-                        top: '7px',
-                    }} />
+                    <img src={'selected.svg'} className="img"/>
                 }
                 {
                     debug && 
-                    <small
-                        style={{
-                            position: 'absolute',
-                            left: 0,
-                            top: 0,
-                        }}
-                    >
+                    <small className="small">
                         {raw.parking_i},{raw.parking_j}
                         <div style={{background: raw.status === 1 ? 'green' :raw.status === 0 ? 'red' : 'gray', fontSize: '15px' }}>
                             {raw.status}

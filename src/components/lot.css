@@ -1,0 +1,12 @@
+.img {
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    top: 7px;
+}
+
+.small {
+    position: absolute;
+    left: 0;
+    top: 0;
+}

@@ -17,7 +17,8 @@ export const useCarGuideLine = () => {
                     console.log(item);
                     return {
                         ...item,
-                        imgPath: item.status == 1 ? "/available.svg" : "/unavailable.svg"
+                        countUnconnected: floor_1.filter((lot)=> lot.status == -1).length,
+                        imgPath: item?.status == 1 ? "/available.svg" : "/unavailable.svg"
                     }
                 })
 
@@ -150,9 +151,7 @@ export const useCarGuideLine = () => {
                 setFloor([
                     ...row_1,
                 ...emptyLot,
-                ...emptyLot,
                 ...row_2,
-                ...emptyLot,
                 ...emptyLot,
                 ...row_3,
                 ...emptyLot,
@@ -160,9 +159,7 @@ export const useCarGuideLine = () => {
                 ...emptyLot,
                 ...row_5,
                 ...emptyLot,
-                ...emptyLot,
                 ...row_6,
-                ...emptyLot,
                 ...emptyLot,
                 ...row_7
                 ])
@@ -181,7 +178,7 @@ export const useCarGuideLine = () => {
                 const convertFromRaw = floor_2.map((item) => {
                     return {
                         ...item,
-                        imgPath: item.status == 1 ? "/available.svg" : "/unavailable.svg"
+                        imgPath: item?.status == 1 ? "/available.svg" : "/unavailable.svg"
                     }
                 })
 
@@ -198,6 +195,27 @@ export const useCarGuideLine = () => {
                 row_1.push(liff)
                 row_1.push(noSlot)
 
+                const emptyLists = [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                ]
 
                 // map row 2
                 const row2 = ['2-15', '2-16', '2-17', '2-18', '2-19', '2-20', '2-21', '2-22', '2-23', '2-24', '2-25', '2-26', '2-27', '2-28', '2-29', '2-30', '2-31']
@@ -255,7 +273,7 @@ export const useCarGuideLine = () => {
                 })
                 row_6.splice(1, 0, empty)
                 row_6.splice(2, 0, empty)
-                setFloor([...row_1, ...row_2, ...row_3, ...row_4, ...row_5, ...row_6])
+                setFloor([...row_1, ...emptyLists, ...row_2, ...emptyLists, ...row_3, ...emptyLists, ...row_4, ...emptyLists, ...row_5, ...emptyLists, ...row_6])
             })
         }
     }, [floor])

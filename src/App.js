@@ -9,34 +9,34 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div style={{
-          display: 'flex', flexDirection: 'column', padding: '2rem'
-        }}>
+        <div className='container-car-guideline'>
           {
             selected &&
             <h5>
               Now selected parking lot: {selected}
             </h5>
           }
-          <div style={{ display: 'flex', position: 'relative' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(19,1fr)', gridGap: '8px' }}>
+          <div className='container-sub-car-guideline'>
+            <div className='row-sub-car-guideline'>
               {
                 floorList.map((item, index) => {
                   return (
                     <>
                       {
                         item.imgPath ?
-                          <Lot 
-                          debug
-                          raw={item}
-                          key={index} lotName={`${item.parking_lot ?? ""}`} imagePath={item.imgPath} selected={selected}
-                            onSelected={
-                              item.imgPath === "/book.svg" || item.imgPath === "/unavailable.svg" ?
-                                (e) => console.log('not selected ', e) :
-                                setSelected
-                            }
-                          /> :
-                          <div style={{ marginTop: '1rem' }}></div>
+                          <>
+                            <Lot
+                              raw={item}
+                              key={index} lotName={`${item.parking_lot ?? ""}`} imagePath={item.imgPath} selected={selected}
+                              onSelected={
+                                item.imgPath === "/book.svg" || item.imgPath === "/unavailable.svg" ?
+                                  (e) => console.log('not selected ', e) :
+                                  setSelected
+                              }
+                            />
+                          </>
+                          :
+                          <div className='mt-1rem'></div>
                       }
                     </>
                   )
@@ -44,32 +44,28 @@ function App() {
               }
 
             </div>
-            <div style={{
-              position: "absolute",
-              bottom: -50,
-              right: 0
-            }}>
+            <div className='entrance'>
               Entrance
             </div>
           </div>
-          <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between' }}>
-            <div style={{ display: 'flex', alignItems: 'center', color: "#383E53" }}>
+          <div className='container-status'>
+            <div className='avaliable'>
               <div>
                 <DynamicIndicator color="#383E53" />
               </div>
-              <div style={{ marginLeft: '1rem' }}>  Available </div>
+              <div className='ml-1rem'>  Available </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', color: "#C9CBD0" }}>
+            <div  className="unnavailable">
               <DynamicIndicator color="#C9CBD0" />
-              <div style={{ marginLeft: '1rem' }}>  Unavailable </div>
+              <div className='ml-1rem'>  Unavailable </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', color: "#EE9C22" }}>
+            <div className='booked'>
               <DynamicIndicator color="#EE9C22" />
-              <div style={{ marginLeft: '1rem' }}>  Booked </div>
+              <div className='ml-1rem'>  Booked </div>
             </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <img src={'selected.svg'} />
-              <div style={{ marginLeft: '1rem' }}>
+              <div className='ml-1rem'>
                 Selected
               </div>
             </div>
